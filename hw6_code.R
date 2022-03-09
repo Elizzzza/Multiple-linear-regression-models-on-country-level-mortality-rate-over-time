@@ -29,7 +29,23 @@ wonder %>%
         geom_point() +
         labs (y = "Number of deaths", x = "Year") +
         theme_bw() 
-
+# Gender and age-stratified mortality rates over time for Washington State counties. Loess-smoothed
+# mortality rates over all counties are shown.
+wonder %>%
+        mutate(rate = deaths/pop) %>%
+        mutate(category = paste(age, gender, sep = ", ")) %>%
+        group_by(county, gender, age) %>%
+        ggplot(aes(x = year, y = rate)) +
+        geom_smooth(span=1) +
+        ylab("Empirical mortality rate\n(deaths per year)") +
+        scale_x_continuous(breaks = c(2010, 2012, 2014, 2016, 2018, 2020)) +
+        theme_bw() +
+        xlab("") +
+        theme(strip.text = element_text(size = 7)) +
+        theme(axis.text.x=element_text(angle=45, hjust=1),
+              legend.position="none") +
+        facet_wrap(~category, scales="free", nrow=2, dir="v") +
+        NULL
 # Q2
 # Here's a Poisson regression model for wonder dataset using rigr:regress
 # mortality rate as response and time, gender, age group as predictors

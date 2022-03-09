@@ -28,7 +28,9 @@ Figure 1 shows the scatterplot panel of log number of deaths (for that county, s
 
 Figure 2 shows the scatterplot panel of the number of deaths (for hat county, sex, age, and year) versus year ranging from 2010 to 2019 by age groups. We observe that the over 85-years-old age group has the highest number of deaths in all years from 2010 to 2019. The 75-84 years-old age group has the second-highest number of deaths in all years from 2010 to 2019. The number of deaths in all years is concentrated below 1000 deaths for all age groups.  
 
-```{r Q1_a, echo=F, warning=F, message=F, fig.width=8, fig.height=5, fig.cap="Scatterplot of Log county-level mortality associated with gender and age group in the WONDER dataset"}
+Figure 3 shows the lineplot panel of Gender and age-stratified mortality rates over time for Washington State counties. The Loess-smoothed mortality rates over all counties with confidence intervals are shown.
+
+```{r Q1_a, echo=F, warning=F, message=F, fig.width=12, fig.height=8, fig.cap="Scatterplot of Log county-level mortality associated with gender and age group in the WONDER dataset"}
 ### -----------------------------------------------------------
 ### Q1
 ### Visualisation of how county-level mortality rates vary over time and 
@@ -56,6 +58,25 @@ wonder %>%
         geom_point() +
         labs (y = "Number of deaths", x = "Year") +
         theme_bw() 
+```
+
+```{r Q1_c, echo=F, warning=F, message=F, fig.width=6, fig.height=4, fig.cap="Gender and age-stratified mortality rates over time for Washington State counties. Loess-smoothed mortality rates over all counties are shown"}
+### Line plot of mortality rate vs. year ranging from 2010-2019 by age and sex groups
+wonder %>%
+        mutate(rate = deaths/pop) %>%
+        mutate(category = paste(age, gender, sep = ", ")) %>%
+        group_by(county, gender, age) %>%
+        ggplot(aes(x = year, y = rate)) +
+        geom_smooth(span=1) +
+        ylab("Empirical mortality rate\n(deaths per year)") +
+        scale_x_continuous(breaks = c(2010, 2012, 2014, 2016, 2018, 2020)) +
+        theme_bw() +
+        xlab("") +
+        theme(strip.text = element_text(size = 7)) +
+        theme(axis.text.x=element_text(angle=45, hjust=1),
+              legend.position="none") +
+        facet_wrap(~category, scales="free", nrow=2, dir="v") +
+        NULL
 ```
 
 
