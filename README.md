@@ -7,7 +7,7 @@ Submit your responses to the below questions as a single pdf file to Canvas. As 
 1. “Responses”, where you respond to the questions, using figures and tables where appropriate.
 2. “Code”, an appendix containing code used to run your analyses and support your responses.
 
-You are welcome to use the homework submission template (Files →Homeworks →submission-template.Rmd) to prepare your responses, but this is not mandatory. Please note that credit will not be given for code and raw software output. Instead, you should use software to run analyses and prepare tables, figures, and/or
+You are welcome to use the homework submission template (Files → Homeworks → submission-template.Rmd) to prepare your responses, but this is not mandatory. Please note that credit will not be given for code and raw software output. Instead, you should use software to run analyses and prepare tables, figures, and/or
 other summaries of results as appropriate.
 
 Please thoughtfully organize your homework and answer in full sentences using professional, scientific writing. Tables and numeric information should be appropriate for inclusion in a scientific report, with appropriate rounding, and figures should be polished (e.g., with axes labelled and legends included). Please review the
