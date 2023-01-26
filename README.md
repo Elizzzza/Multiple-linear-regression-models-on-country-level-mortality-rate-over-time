@@ -1,25 +1,13 @@
-# BIOST 515/518: Homework 6
+# Apply multiple linear regression models to study how county-level mortality rates vary over time and are associated with gender and age
+#### BIOST 515/518 Assignment 6
 #### Instructor:  Amy Willis
-
-## Instructions
-Submit your responses to the below questions as a single pdf file to Canvas. As in previous homeworks, your responses should have two sections:
-
-1. “Responses”, where you respond to the questions, using figures and tables where appropriate.
-2. “Code”, an appendix containing code used to run your analyses and support your responses.
-
-You are welcome to use the homework submission template (Files → Homeworks → submission-template.Rmd) to prepare your responses, but this is not mandatory. Please note that credit will not be given for code and raw software output. Instead, you should use software to run analyses and prepare tables, figures, and/or
-other summaries of results as appropriate.
-
-Please thoughtfully organize your homework and answer in full sentences using professional, scientific writing. Tables and numeric information should be appropriate for inclusion in a scientific report, with appropriate rounding, and figures should be polished (e.g., with axes labelled and legends included). Please review the
-published homeworks keys for both content and style.
-
-A key purpose of this homework (and all homeworks) is to work on Learning Goal #4: Practice explaining our models and their interpretations to both statistical and non-statistical audiences, so please use this opportunity to practice communicating clearly and justifying your scientific and statistical work.
 
 ## Background
 
-The Centers for Disease Control and Prevention maintain a variety of online databases of public-health data through the WONDER database (“Wide-ranging ONline Data for Epidemiologic Research”), including data on births and deaths, sexually transmitted diseases, heatwaves and air pollution. More information on the
-database is available at https://wonder.cdc.gov/.
-In this homework, we will model mortality rates among 55+ year olds in counties in Washington state. A subset of the WONDER data is available on the Canvas course website in the file cdc-wonder-wa.csv. 
+The Centers for Disease Control and Prevention maintain a variety of online databases of public-health data through the WONDER database (“Wide-ranging ONline Data for Epidemiologic Research”), including data on births and deaths, sexually transmitted diseases, heatwaves and air pollution. More information on the database is available at https://wonder.cdc.gov/.
+
+## Dataset
+We will model mortality rates among 55+ year olds in counties in Washington state. A subset of the WONDER data is available in the file cdc-wonder-wa.csv. 
 The variables in this dataset are as follows:
 - ***county***: Name of the county in Washington
 - ***gender***: “Male” or “Female”
